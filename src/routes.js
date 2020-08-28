@@ -10,5 +10,7 @@ routes.put('/users/:id', UserController.update)
 routes.delete('/users/:id', UserController.delete)
 
 routes.get('/subjects', SubjectController.index)
+routes.post('/subjects', SubjectController.create)
+
 
 module.exports = routes
