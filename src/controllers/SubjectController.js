@@ -19,6 +19,7 @@ module.exports = {
                     .where({ user_id: user_id })
                     .join('users', 'users.id', '=', 'subjects.user_id')
                     .select('subjects.*', 'users.username')
+                    .where('users.deleted_at', null)
 
                 countObj.where({ user_id })
             }
@@ -52,6 +53,8 @@ module.exports = {
         } catch (error) {
             next(error)
         }
-    }
+    },
+
+
 
 }
